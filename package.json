@@ -47,7 +47,7 @@
     "bs58": "^4.0.1",
     "chart.js": "^4.3.0",
     "commonmark": "^0.29.3",
-    "core-js": "^3.6.5",
+    "core-js": "^3.39.0",
     "leaflet": "^1.8.0",
     "node-polyfill-webpack-plugin": "^2.0.0",
     "oidc-client-ts": "^3.0.1",
