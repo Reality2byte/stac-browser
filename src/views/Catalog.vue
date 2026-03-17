@@ -21,7 +21,7 @@
               <b-col md="8" class="value"><span v-html="temporalExtents" /></b-col>
             </b-row>
           </section>
-          <LinkList v-if="linkPosition === 'left'" :title="$t('additionalResources')" :links="additionalLinks" :context="data" />
+          <LinkList v-if="linkPosition === 'left'" :title="$t('additionalResources')" :links="additionalLinks" />
         </section>
         <section v-if="isCollection || hasThumbnails" class="mb-4">
           <b-card no-body class="maps-preview">
@@ -35,11 +35,11 @@
             </b-tabs>
           </b-card>
         </section>
-        <Assets v-if="hasAssets" :assets="assets" :context="data" :shown="selectedReferences" @show-asset="showAsset" />
-        <Assets v-if="hasItemAssets && !hasItems" :assets="itemAssets" :context="data" :definition="true" />
+        <Assets v-if="hasAssets" :assets="assets" :shown="selectedReferences" @show-asset="showAsset" />
+        <Assets v-if="hasItemAssets && !hasItems" :assets="itemAssets" :definition="true" />
         <Providers v-if="providers" :providers="providers" />
         <MetadataGroups class="mb-4" :type="data.type" :data="data" :ignoreFields="ignoredMetadataFields" />
-        <LinkList v-if="linkPosition === 'right'" :title="$t('additionalResources')" :links="additionalLinks" :context="data" />
+        <LinkList v-if="linkPosition === 'right'" :title="$t('additionalResources')" :links="additionalLinks" />
       </b-col>
       <b-col class="catalogs-container" v-if="hasCatalogs">
         <Catalogs :catalogs="catalogs" :hasMore="hasMore" @load-more="loadMoreCollections" />
@@ -53,7 +53,7 @@
           @paginate="paginateItems" @filter-items="filterItems"
           @filters-shown="filtersShown"
         />
-        <Assets v-if="hasItemAssets" :assets="itemAssets" :context="data" :definition="true" />
+        <Assets v-if="hasItemAssets" :assets="itemAssets" :definition="true" />
       </b-col>
     </b-row>
   </div>
